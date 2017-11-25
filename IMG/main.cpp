@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
 	Mat img = imread("lena.jpg", CV_LOAD_IMAGE_COLOR);
 	if (img.empty())
 		return -1;
+	threshold(img, img, 100, 255, CV_THRESH_BINARY);
 	namedWindow("lena", CV_WINDOW_AUTOSIZE);
 	imshow("lena", img);
 	waitKey(0);
